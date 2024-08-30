@@ -11,7 +11,7 @@ public class StateMachineTests
     }
 
     [Fact]
-    public void Test1()
+    public async Task Test1()
     {
         bool entered = false;
         bool exited = false;
@@ -41,7 +41,7 @@ public class StateMachineTests
         stateMachine.CurrentState.MustBe(TestStates.Start);
 
         // change to the new state
-        stateMachine.ChangeState(TestStates.End);
+        await stateMachine.ChangeState(TestStates.End);
 
         // we've changed to the new state and fired the OnEnter action.
         stateMachine.CurrentState.MustBe(TestStates.End);

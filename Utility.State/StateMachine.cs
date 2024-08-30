@@ -38,18 +38,23 @@ public class StateMachine<TEnum> where TEnum : Enum
     /// Changes the current state of the state machine to the specified new state.
     /// </summary>
     /// <param name="newState">The new state to transition to.</param>
-    public void ChangeState(TEnum newState)
+    public async Task ChangeState(TEnum newState)
     {
+        if (newState.Equals(CurrentState))
+        {
+            return;
+        }
+
         if (_states.TryGetValue(CurrentState, out StateMachineState<TEnum> exitState))
         {
-            exitState.FireOnExit(CurrentState);
+            await exitState.FireOnExit(CurrentState);
         }
 
         // transition to new state
         if (_states.TryGetValue(newState, out StateMachineState<TEnum> state))
         {
             CurrentState = newState;
-            state.FireOnEnter(newState);
+            await state.FireOnEnter(newState);
         }
     }
 }

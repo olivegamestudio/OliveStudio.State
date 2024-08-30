@@ -25,18 +25,20 @@ public class StateMachineState<TEnum> where TEnum : Enum
     /// Invokes the on-enter action for the state.
     /// </summary>
     /// <param name="value">The state value.</param>
-    internal void FireOnEnter(TEnum value)
+    internal Task FireOnEnter(TEnum value)
     {
         _onEnter?.Invoke(value);
+        return Task.CompletedTask;
     }
 
     /// <summary>
     /// Invokes the on-exit action for the state.
     /// </summary>
     /// <param name="value">The state value.</param>
-    internal void FireOnExit(TEnum value)
+    internal Task FireOnExit(TEnum value)
     {
         _onExit?.Invoke(value);
+        return Task.CompletedTask;
     }
 
     /// <summary>
