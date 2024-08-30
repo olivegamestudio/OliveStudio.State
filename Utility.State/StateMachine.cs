@@ -9,9 +9,17 @@ public class StateMachine<TEnum> where TEnum : Enum
     readonly Dictionary<TEnum, StateMachineState<TEnum>> _states = new();
 
     /// <summary>
+    /// Determines whether the state machine is currently in the specified state.
+    /// </summary>
+    /// <param name="state">The state to check.</param>
+    /// <returns><c>true</c> if the state machine is in the specified state; otherwise, <c>false</c>.</returns>
+    public bool IsInState(TEnum state)
+        => CurrentState.Equals(state);
+
+    /// <summary>
     /// Gets the current state of the state machine.
     /// </summary>
-    public TEnum CurrentState { get; private set; }
+    TEnum CurrentState { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="StateMachine{TEnum}"/> class with the specified initial state.
