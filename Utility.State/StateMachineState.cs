@@ -8,9 +8,13 @@ public class StateMachineState<TEnum> where TEnum : Enum
 {
     readonly StateMachine<TEnum> _parentState;
 
+    DateTime _enterTime;
+
     Action<TEnum>? _onEnter;
 
     Action<TEnum>? _onExit;
+
+    public TimeSpan TimeInState => DateTime.Now - _enterTime;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="StateMachineState{TEnum}"/> class.
@@ -28,6 +32,7 @@ public class StateMachineState<TEnum> where TEnum : Enum
     internal Task FireOnEnter(TEnum value)
     {
         _onEnter?.Invoke(value);
+        _enterTime = DateTime.Now;
         return Task.CompletedTask;
     }
 
