@@ -1,6 +1,6 @@
 using Musts;
 
-namespace Utility.State.Tests;
+namespace Utility.StateMachine.Tests;
 
 public class StateMachineTests
 {

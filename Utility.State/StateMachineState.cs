@@ -1,4 +1,4 @@
-﻿namespace Utility.State;
+﻿namespace Utility;
 
 /// <summary>
 /// Represents a state in the state machine.

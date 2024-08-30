@@ -1,4 +1,4 @@
-﻿namespace Utility.State;
+﻿namespace Utility;
 
 /// <summary>
 /// Represents a state machine that manages states of type <typeparamref name="TEnum"/>.

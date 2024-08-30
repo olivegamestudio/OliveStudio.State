@@ -10,6 +10,7 @@
 		<Description>A state machine library.</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<LangVersion>latest</LangVersion>
+		<RootNamespace>Utility</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>
