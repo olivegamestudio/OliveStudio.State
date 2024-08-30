@@ -38,13 +38,13 @@ public class StateMachineTests
                 .EndConfigure();
 
         // we are in the initial state and no action has been fired.
-        stateMachine.CurrentState.MustBe(TestStates.Start);
+        stateMachine.IsInState(TestStates.Start).MustBeTrue();
 
         // change to the new state
         await stateMachine.ChangeState(TestStates.End);
 
         // we've changed to the new state and fired the OnEnter action.
-        stateMachine.CurrentState.MustBe(TestStates.End);
+        stateMachine.IsInState(TestStates.End).MustBeTrue();
         entered.MustBeTrue();
         exited.MustBeTrue();
     }
