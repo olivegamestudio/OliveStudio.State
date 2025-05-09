@@ -10,11 +10,11 @@
 		<Description>A state machine library.</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<LangVersion>latest</LangVersion>
-		<RootNamespace>Utility</RootNamespace>
+		<RootNamespace>OliveStudio</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MinVer" Version="*">
+		<PackageReference Include="MinVer" Version="6.0.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>

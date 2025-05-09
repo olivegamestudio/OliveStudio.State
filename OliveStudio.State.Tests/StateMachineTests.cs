@@ -1,6 +1,6 @@
 using Musts;
 
-namespace Utility.StateMachine.Tests;
+namespace OliveStudio.StateMachine.Tests;
 
 public class StateMachineTests
 {

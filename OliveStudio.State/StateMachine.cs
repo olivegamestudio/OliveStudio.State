@@ -1,4 +1,4 @@
-﻿namespace Utility;
+﻿namespace OliveStudio;
 
 /// <summary>
 /// Represents a state machine that manages states of type <typeparamref name="TEnum"/>.
@@ -13,8 +13,7 @@ public class StateMachine<TEnum> where TEnum : Enum
     /// </summary>
     /// <param name="state">The state to check.</param>
     /// <returns><c>true</c> if the state machine is in the specified state; otherwise, <c>false</c>.</returns>
-    public bool IsInState(TEnum state)
-        => CurrentState.Equals(state);
+    public bool IsInState(TEnum state) => CurrentState.Equals(state);
 
     /// <summary>
     /// Gets the current state of the state machine.

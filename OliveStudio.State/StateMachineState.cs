@@ -1,4 +1,4 @@
-﻿namespace Utility;
+﻿namespace OliveStudio;
 
 /// <summary>
 /// Represents a state in the state machine.
@@ -72,8 +72,5 @@ public class StateMachineState<TEnum> where TEnum : Enum
     /// Ends the configuration of the state and returns the parent state machine.
     /// </summary>
     /// <returns>The parent <see cref="StateMachine{TEnum}"/> instance.</returns>
-    public StateMachine<TEnum> EndConfigure()
-    {
-        return _parentState;
-    }
+    public StateMachine<TEnum> EndConfigure() => _parentState;
 }
